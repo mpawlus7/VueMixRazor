@@ -1,0 +1,44 @@
+﻿@model CustomerViewModel
+
+@{
+    ViewBag.Title = "Create Customer";
+    Layout = "_Layout";
+}
+
+<h2>Create Customer</h2>
+
+<form asp-controller="Customers" asp-action="Create">
+    <customer-create-or-edit inline-template>
+        <div>
+            @* <input type="hidden" asp-for="CustomerId"/> *@
+
+            <div class="form-group">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" class="form-control"/>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" class="form-control"/>
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BirthYear"></label>
+                <input v-model.number="birthYear" asp-for="BirthYear" class="form-control"/>
+                <span asp-validation-for="BirthYear" class="text-danger"></span>
+                <small id="emailHelp" class="form-text text-muted">Age: {{calculatedAge}}</small>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" v-model="hasEmail"/>
+                <label asp-for="Email"></label>
+                <input v-if="hasEmail" asp-for="Email" class="form-control"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <input type="submit" value="Save" class="btn btn-primary">
+        </div>
+    </customer-create-or-edit>
+</form>

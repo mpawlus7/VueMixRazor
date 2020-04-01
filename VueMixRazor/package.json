@@ -1,0 +1,31 @@
+{
+  "name": "VueMixRazor",
+  "version": "1.0.0",
+  "author": "mpawlus",
+  "private": true,
+  "scripts": {
+    "buildDev": "cross-env NODE_ENV=development webpack --progress --hide-modules",
+    "buildProd": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "watchDev": "cross-env NODE_ENV=development webpack --watch --color",
+    "watchProd": "cross-env NODE_ENV=production webpack --watch --color"
+  },
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^6.0.3",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.4",
+    "style-loader": "^1.0.0",
+    "vue-loader": "^15.9.1",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
